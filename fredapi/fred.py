@@ -72,7 +72,7 @@ class Fred:
         """
         helper function for parsing FRED date string into datetime
         """
-        rv = pd.to_datetime(date_str, format=format)
+        rv = pd.to_datetime(date_str, format=format, errors='ignore')
         if hasattr(rv, 'to_pydatetime'):
             rv = rv.to_pydatetime()
         return rv
